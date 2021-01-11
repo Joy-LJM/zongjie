@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person (name1,age1){
+            this.name=name1,
+            this.age=age1
+        }
+        Person.prototype.fn=function(){
+            console.log(123);
+        }
+        let person=new Person("丽丽",18)
+        let person1=new Person("丽丽",18) 
+        person.name="平平"
+        person.address="深圳"
+        console.log(person);
+        console.log(person1.name);
+
+        console.log( person.__proto__.fn()==Person.prototype.fn());   //trur
+        console.log( person.__proto__.fn()==person.constructor.prototype.fn());    //true
+        Object.getPrototypeOf(person).fn()
+     
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 把字符串转成数组
+        var string='aavsdgsgstbbbbbbbbbbbyegh'
+        var arr=string.split('')
+        // var arr1=new Set(arr)
+        // console.log(arr1);
+    //    出现最多的字母
+        var max;
+        // 出现最多的次数
+        var maxc=0;
+        for(var i=0;i<arr.length;i++){
+            var count=0;
+            for(var j=0;j<arr.length;j++){
+                if(arr[i]==arr[j]){
+                    count++;
+                }
+            }
+            if(maxc<count){
+                maxc=count;
+                max=arr[i]
+            }
+        }
+        console.log(max,maxc);
+       
+
+    //    第二种重复
+var ary = "aaabbc";
+var obj = {};
+var i = 0;
+
+ary1 = ary
+
+for (i = 0; i < ary1.length; i++) {
+  key = ary1[i];
+
+  if (obj[key]) {
+    obj[key]++;
+  } else {
+    obj[key] = 1;
+  }
+}
+
+for (var key in obj) {
+  console.log(key + "这个字母出现了" + obj[key] + "次");
+}
+
+    </script>
+    
+</body>
+</html>

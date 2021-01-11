@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outerBox{
+            overflow: scroll;
+            height:200px;
+            width: 200px;
+        }
+        .innerBox{
+            height: 500px;
+            width: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="outerBox" id="box">
+        <div class="innerBox">
+
+        </div>
+    </div>
+</body>
+<script>
+/* 防抖和节流 */
+    // document.getElementById("box").addEventListener("scroll",debounce(function(){
+    //     console.log("滚动事件触发啦");
+    // },1000))
+    document.getElementById("box").addEventListener("scroll",throttle(function(){
+        console.log("滚动事件触发啦");
+    },1000))
+    /* 防抖的例子 */
+    /* 
+        @fn 回调函数
+        @timeout 执行时间
+    */
+    function debounce(fn,timeout){
+        // 定时器的id
+        // 闭包
+        let timeId = null;
+        return function(){
+          if(timeId){
+              // 把上次的定时任务 清理掉
+              clearTimeout(timeId);
+              timeId = null;
+          }
+          timeId = setTimeout(fn,timeout);// 第一次进来
+        }
+    }
+    /* 节流的例子 有规律性去触发 在事件频繁发生的情况 */
+    function throttle(fn,timeout){
+        let valid = true;// 标识上次事件是否已经完成
+        return function(){
+            // 上次事件已经执行完毕
+            if(valid){
+                valid = false;// 设置定义器
+                setTimeout(function(){
+                    fn.call(this);// 执行回调函数
+                    valid = true;
+                },timeout)
+            }
+        }
+    }
+</script>
+</html>

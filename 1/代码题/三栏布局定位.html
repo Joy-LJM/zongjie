@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+           margin: 0;
+           padding: 0;
+        }
+        html ,body{
+            height: 100%;
+        }
+        #app{
+            height: 100%;
+            /* 重要步骤 */
+            /* overflow: hidden; */
+            position: relative;
+        }
+        .left{
+           position: absolute;
+           left: 0;
+           bottom: 0;
+            width: 200px;
+            height: 100%;
+            background-color: red;
+        }
+        .right{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 200px;
+            height: 100%;
+            background-color:red;
+        }
+        .center{
+            height: 100%;
+            background-color:yellow;
+            /* 重要步骤 */
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 左右宽为200px,中间自适应 -->
+    <div id="app">
+        <div class="left"></div>
+        <div class="center"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

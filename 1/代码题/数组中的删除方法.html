@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.deldte关键字（可以删除任意一个参数）delete只是被删除的元素变成了 empty/undefined 其他的元素的键值还是不变
+        var arr =[2,3,4,6,7]
+        delete(arr[0])
+        console.log(arr);
+        console.log(arr[0]);
+        // 2.pop方法(删除数组中的最后一个参数)
+        // arr.pop()
+        // console.log(arr);
+        // 3.shift（开头第一个参数）
+        // arr.shift()
+        // console.log(arr);
+        // 4.splice方法删除任意一个
+        // arr.splice(2,1)
+        // console.log(arr);
+        // 5.filter方法
+        // var arr1=arr.filter(item=>{
+        //     return item != 6
+        // })
+        // console.log(arr1);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [2, 3, 3, 4, 4, 5, 6, 6, 6, 4, 53, 5, 2, 5, 25, 5, 5, 5, 5, ]
+        // var maxcount=0
+        // var max
+        // for(var i=0;i<arr.length;i++){
+        //     var count=0
+        //     for(var j=0 ;j<arr.length;j++){
+        //         if(arr[i]==arr[j]){
+        //             count++
+        //         }
+        //     }
+        //     if(maxcount<count){
+        //         maxcount=count
+        //         max=arr[i]
+        //     }
+
+        // }
+        // console.log(maxcount,max);
+
+        function fn() {
+            var maxcount = 0
+            var max
+            for (var i = 0; i < arr.length; i++) {
+                var count = 0
+                for (var j = 0; j < arr.length; j++) {
+                    if (arr[i] == arr[j]) {
+                        count++
+                    }
+                }
+                if (maxcount < count) {
+                    maxcount = count
+                    max = arr[i]
+                }
+
+            }
+            return (maxcount ,max)
+        }
+        var a=fn(arr)
+        console.log(a);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        (async function () {
+            var res1 = await new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                    console.log('异步任务1');
+                    resolve('成功1');
+                }, 1000);
+            });
+            var res2 = await new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                    console.log('异步任务2');
+                    resolve('成功2');
+                }, 1000);
+            });
+            console.log(res1, res2);
+            console.log('同步任务3');
+            console.log('同步任务4');
+        })();
+
+
+        // async 和await.html:15 异步任务1
+// async 和await.html:21 异步任务2
+// async 和await.html:25 成功1 成功2
+// async 和await.html:26 同步任务3
+// async 和await.html:27 同步任务4
+    </script>
+</body>
+
+</html>
